@@ -1,0 +1,136 @@
+{
+  "products": [
+    {
+      "id": "P001",
+      "name": "Cimento Portland CP II-E-32",
+      "category": "Cimentos e Argamassas",
+      "description": "Cimento Portland composto com escória granulada de alto-forno, ideal para obras em geral como estruturas, pisos, lajes, vigas e pilares. Embalagem de 50kg.",
+      "specifications": {
+        "peso": "50kg",
+        "resistencia": "32 MPa",
+        "tipo": "CP II-E-32",
+        "aplicacoes": ["Estruturas", "Pisos", "Lajes", "Vigas", "Pilares"]
+      },
+      "usage_instructions": "Misturar com areia e água na proporção adequada para o tipo de aplicação. Para concreto estrutural, recomenda-se a proporção 1:2:3 (cimento:areia:brita) com fator água/cimento de 0,5."
+    },
+    {
+      "id": "P002",
+      "name": "Tijolo Cerâmico 8 Furos",
+      "category": "Alvenaria",
+      "description": "Tijolo cerâmico de 8 furos para construção de paredes e divisórias. Fabricado com argila de alta qualidade, oferece excelente isolamento térmico e acústico.",
+      "specifications": {
+        "dimensoes": "9x19x19cm",
+        "peso": "2,5kg",
+        "resistencia": "≥ 1,5 MPa",
+        "absorcao_agua": "≤ 22%"
+      },
+      "usage_instructions": "Assentar com argamassa de cimento e areia no traço 1:5. Manter os tijolos nivelados e alinhados usando linha de pedreiro. Molhar os tijolos antes do assentamento para evitar que absorvam água da argamassa."
+    },
+    {
+      "id": "P003",
+      "name": "Tinta Acrílica Premium Fosca",
+      "category": "Tintas e Acessórios",
+      "description": "Tinta acrílica premium fosca de alta cobertura e rendimento para ambientes internos e externos. Resistente a intempéries, possui baixo odor e secagem rápida.",
+      "specifications": {
+        "rendimento": "até 380m² por demão/galão",
+        "secagem": "ao toque: 30 min, entre demãos: 4h, final: 12h",
+        "diluicao": "30% com água potável",
+        "acabamento": "fosco"
+      },
+      "usage_instructions": "Limpar bem a superfície antes da aplicação, removendo poeira, gordura e partes soltas. Aplicar com rolo, pincel ou pistola em 2 a 3 demãos, respeitando o tempo de secagem entre elas."
+    },
+    {
+      "id": "P004",
+      "name": "Telha Cerâmica Portuguesa",
+      "category": "Coberturas",
+      "description": "Telha cerâmica tipo portuguesa, com design tradicional e excelente escoamento de água. Fabricada com argila de alta qualidade e queima controlada para maior durabilidade.",
+      "specifications": {
+        "dimensoes": "40x24cm",
+        "peso": "3,2kg",
+        "inclinacao_minima": "30%",
+        "rendimento": "16 peças/m²"
+      },
+      "usage_instructions": "Instalar sobre estrutura de madeira ou metálica com espaçamento adequado. Iniciar a colocação de baixo para cima e da direita para a esquerda. Fixar com arame, parafusos ou ganchos específicos."
+    },
+    {
+      "id": "P005",
+      "name": "Vergalhão CA-50 10mm",
+      "category": "Ferragens",
+      "description": "Barra de aço nervurada CA-50 com 10mm de diâmetro para uso em estruturas de concreto armado. Alta resistência à tração e excelente aderência ao concreto.",
+      "specifications": {
+        "diametro": "10mm",
+        "comprimento": "12m",
+        "peso": "7,40kg/barra",
+        "resistencia": "500 MPa"
+      },
+      "usage_instructions": "Cortar no comprimento desejado e dobrar conforme projeto estrutural. Posicionar na forma antes da concretagem, utilizando espaçadores para garantir o cobrimento mínimo de concreto."
+    },
+    {
+      "id": "P006",
+      "name": "Argamassa Colante AC-II",
+      "category": "Cimentos e Argamassas",
+      "description": "Argamassa colante tipo AC-II para assentamento de revestimentos cerâmicos em áreas internas e externas. Oferece alta aderência e flexibilidade, ideal para áreas sujeitas a variações térmicas.",
+      "specifications": {
+        "tipo": "AC-II",
+        "tempo_em_aberto": "20 minutos",
+        "tempo_de_cura": "72 horas",
+        "rendimento": "4 a 5 kg/m²"
+      },
+      "usage_instructions": "Misturar com água limpa até obter consistência pastosa e homogênea. Aplicar com desempenadeira dentada, formando cordões uniformes. Assentar as peças pressionando e movimentando levemente."
+    },
+    {
+      "id": "P007",
+      "name": "Torneira para Cozinha de Mesa",
+      "category": "Hidráulica",
+      "description": "Torneira para cozinha de mesa com bica móvel e acabamento cromado. Design moderno e funcional, com mecanismo de 1/4 de volta para maior durabilidade e economia de água.",
+      "specifications": {
+        "material": "Latão com acabamento cromado",
+        "altura": "28cm",
+        "tipo_de_acionamento": "1/4 de volta",
+        "garantia": "10 anos"
+      },
+      "usage_instructions": "Instalar em bancada com furo de 35mm de diâmetro. Utilizar fita veda-rosca nas conexões. Apertar moderadamente para evitar danos à peça."
+    },
+    {
+      "id": "P008",
+      "name": "Piso Porcelanato Acetinado",
+      "category": "Revestimentos",
+      "description": "Piso porcelanato acetinado de alta resistência e baixa absorção de água. Ideal para áreas internas de alto tráfego, oferece fácil limpeza e manutenção.",
+      "specifications": {
+        "dimensoes": "60x60cm",
+        "espessura": "8,5mm",
+        "pei": "5",
+        "acabamento": "Acetinado",
+        "resistencia_manchas": "Classe 5"
+      },
+      "usage_instructions": "Assentar com argamassa colante específica para porcelanato. Utilizar espaçadores para garantir juntas uniformes. Rejuntar após 72 horas da instalação."
+    },
+    {
+      "id": "P009",
+      "name": "Furadeira de Impacto 750W",
+      "category": "Ferramentas",
+      "description": "Furadeira de impacto profissional com potência de 750W, ideal para perfurações em concreto, madeira e metal. Conta com controle eletrônico de velocidade e sistema de reversão.",
+      "specifications": {
+        "potencia": "750W",
+        "velocidade": "0-3000 rpm",
+        "capacidade_perfuracao": "Concreto: 16mm, Aço: 13mm, Madeira: 30mm",
+        "mandril": "1/2\" (13mm)"
+      },
+      "usage_instructions": "Selecionar a broca adequada para o material a ser perfurado. Ajustar a velocidade conforme a aplicação. Para concreto, utilizar a função impacto. Usar equipamentos de proteção individual."
+    },
+    {
+      "id": "P010",
+      "name": "Manta Asfáltica Aluminizada 3mm",
+      "category": "Impermeabilização",
+      "description": "Manta asfáltica aluminizada com 3mm de espessura para impermeabilização de lajes, calhas e telhados. Oferece proteção contra raios UV e excelente durabilidade.",
+      "specifications": {
+        "espessura": "3mm",
+        "largura": "1m",
+        "comprimento": "10m",
+        "acabamento": "Aluminizado",
+        "tipo": "Tipo III"
+      },
+      "usage_instructions": "Limpar bem a superfície antes da aplicação. Aplicar primer asfáltico e aguardar secagem. Desenrolar a manta aquecendo com maçarico a gás, garantindo a aderência total ao substrato."
+    }
+  ]
+}
