@@ -20,6 +20,16 @@
         </div>
     </header>
 
+    <!-- Pop-up notification -->
+    <div id="notification-popup" class="notification-popup hidden">
+        <div class="notification-content">
+            <h3>Bem-vindo ao RespondeIA! 🚀</h3>
+            <p>Nossa inteligência artificial está pronta para responder suas dúvidas sobre os produtos!</p>
+            <p>Basta acessar a página de detalhes de qualquer produto e deixar seu comentário na seção de perguntas.</p>
+            <button id="close-notification" class="btn">Entendi</button>
+        </div>
+    </div>
+
     <main class="container">
         {% block content %}{% endblock %}
     </main>
