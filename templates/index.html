@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Produtos - Materiais de Construção{% endblock %}
+
+{% block content %}
+<section class="products">
+    <h2>Nossos Produtos</h2>
+    <p>Clique em um produto para ver detalhes e fazer perguntas.</p>
+
+    <div class="product-grid">
+        {% for product in products %}
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{{ url_for('static', filename='img/placeholder.svg') }}" alt="{{ product.name }}">
+            </div>
+            <div class="product-info">
+                <h3>{{ product.name }}</h3>
+                <p class="product-category">{{ product.category }}</p>
+                <p class="product-description">{{ product.description|truncate(100) }}</p>
+                <a href="{{ url_for('product_detail', product_id=product.id) }}" class="btn">Ver Detalhes</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

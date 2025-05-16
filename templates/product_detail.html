@@ -1,0 +1,163 @@
+{% extends "base.html" %}
+
+{% block title %}{{ product.name }} - Materiais de Construção{% endblock %}
+
+{% block extra_head %}
+<meta name="product-id" content="{{ product.id }}">
+{% endblock %}
+
+{% block content %}
+<section class="product-detail">
+    <div class="breadcrumb">
+        <a href="{{ url_for('index') }}">Produtos</a> &gt; {{ product.name }}
+    </div>
+
+    <div class="product-container">
+        <div class="product-image-large">
+            <img src="{{ url_for('static', filename='img/placeholder.svg') }}" alt="{{ product.name }}">
+        </div>
+
+        <div class="product-info-detailed">
+            <h2>{{ product.name }}</h2>
+            <p class="product-category">{{ product.category }}</p>
+            <p class="product-description">{{ product.description }}</p>
+
+            <div class="product-specifications">
+                <h3>Especificações</h3>
+                <ul>
+                    {% for key, value in product.specifications.items() %}
+                    <li>
+                        <strong>{{ key|capitalize }}:</strong>
+                        {% if value is iterable and value is not string %}
+                            {{ value|join(", ") }}
+                        {% else %}
+                            {{ value }}
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="product-usage">
+                <h3>Instruções de Uso</h3>
+                <p>{{ product.usage_instructions }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="comments-section">
+    <h3>Pergunte sobre este produto</h3>
+    <p>Tem dúvidas sobre este produto? Nosso assistente virtual pode ajudar!</p>
+
+    <div class="comment-form">
+        <textarea id="comment-text" placeholder="Digite sua pergunta aqui..."></textarea>
+        <button id="submit-comment" class="btn">Enviar Pergunta</button>
+    </div>
+
+    <div id="loading-indicator" class="hidden">
+        <div class="spinner"></div>
+        <p>Processando sua pergunta...</p>
+    </div>
+
+    <div id="comments-container">
+        {% if comments %}
+        <h3>Perguntas e Respostas</h3>
+        {% for comment in comments|reverse %}
+        <div class="comment-response-pair">
+            <div class="comment">
+                <h4>Pergunta:</h4>
+                <p>{{ comment.comment }}</p>
+            </div>
+            <div class="response">
+                <h4>Resposta:</h4>
+                <p>{{ comment.response }}</p>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const commentText = document.getElementById('comment-text');
+        const submitButton = document.getElementById('submit-comment');
+        const loadingIndicator = document.getElementById('loading-indicator');
+        const commentsContainer = document.getElementById('comments-container');
+        const productId = document.querySelector('meta[name="product-id"]').getAttribute('content');
+
+        submitButton.addEventListener('click', async function() {
+            const comment = commentText.value.trim();
+
+            if (!comment) {
+                alert('Por favor, digite uma pergunta.');
+                return;
+            }
+
+            // Show loading indicator
+            loadingIndicator.classList.remove('hidden');
+            submitButton.disabled = true;
+
+            try {
+                const response = await fetch('/api/comment', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        product_id: productId,
+                        comment: comment
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.status === 'success') {
+                    // Create new comment-response pair
+                    const commentResponsePair = document.createElement('div');
+                    commentResponsePair.className = 'comment-response-pair';
+
+                    // Add comment
+                    const commentDiv = document.createElement('div');
+                    commentDiv.className = 'comment';
+                    commentDiv.innerHTML = `<h4>Pergunta:</h4><p>${comment}</p>`;
+
+                    // Add response
+                    const responseDiv = document.createElement('div');
+                    responseDiv.className = 'response';
+                    responseDiv.innerHTML = `<h4>Resposta:</h4><p>${data.response}</p>`;
+
+                    // Add to the container
+                    commentResponsePair.appendChild(commentDiv);
+                    commentResponsePair.appendChild(responseDiv);
+
+                    // Add heading if this is the first comment
+                    if (commentsContainer.children.length === 0) {
+                        const heading = document.createElement('h3');
+                        heading.textContent = 'Perguntas e Respostas';
+                        commentsContainer.appendChild(heading);
+                    }
+
+                    // Add to the beginning of the container
+                    commentsContainer.insertBefore(commentResponsePair, commentsContainer.firstChild.nextSibling);
+
+                    // Clear the comment text
+                    commentText.value = '';
+                } else {
+                    alert('Erro ao processar sua pergunta. Por favor, tente novamente.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Erro ao processar sua pergunta. Por favor, tente novamente.');
+            } finally {
+                // Hide loading indicator
+                loadingIndicator.classList.add('hidden');
+                submitButton.disabled = false;
+            }
+        });
+    });
+</script>
+{% endblock %}
